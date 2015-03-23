@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  
+    xmlns:h="http://java.sun.com/jsf/html"  
+    xmlns:f="http://java.sun.com/jsf/core">  
+  
+<h:head>  
+    <title>Registrieren</title>  
+</h:head>  
+<h:body>  
+    <f:view>  
+        <h:form id="registerForm">  
+            <table>  
+                <tr>  
+                    <td><h:outputText value="Name:" /></td>  
+                    <td><h:inputText id="name" value="#{user.name}"  
+                            required="true" requiredMessage="Please enter your first name" /></td>  
+                    <td><h:message for="name" style="color:red" /></td>  
+                </tr>  
+                <tr>  
+                    <td><h:outputText value="Passwort:" /></td>  
+                    <td><h:inputText id="pass" value="#{user.passwort}"  
+                            required="true" requiredMessage="Bitte geben Sie ein Passwort an!" /></td>  
+                    <td><h:message for="pass" style="color:red" /></td>  
+                </tr>  
+                <tr>  
+                    <td><h:outputText value="Beruf:" /></td>  
+                    <td><h:inputText id="beruf" value="#{user.beruf}"  
+                            required="true" requiredMessage="Bitte geben Sie einen Beruf an!" /></td>  
+                    <td><h:message for="beruf" style="color:red" /></td>  
+                </tr>  
+                <tr>  
+                    <td><h:outputText value="Arbeitgeber:" /></td>  
+                    <td><h:inputSecret id="arbeitgeber" value="#{user.arbeitgeber}"  
+                            required="true" requiredMessage="Bitte geben Sie Ihren Arbeitgeber an!" /></td>  
+                    <td><h:message for="arbeitgeber" style="color:red" /></td>  
+                </tr>
+                <tr>  
+                    <td><h:outputText value="Wohnort:" /></td>  
+                    <td><h:inputSecret id="wohnort" value="#{user.ort}"  
+                            required="true" requiredMessage="Bitte geben Sie Ihren Wohnort an!" /></td>  
+                    <td><h:message for="wohnort" style="color:red" /></td>  
+                </tr> 
+                <tr>  
+                    <td><h:outputText value="Straße:" /></td>  
+                    <td><h:inputSecret id="psw" value="#{user.strasse}"  
+                            required="true" requiredMessage="Bitte geben Sie Ihre Straße an!" /></td>  
+                    <td><h:message for="psw" style="color:red" /></td>  
+                </tr> 
+                <tr>  
+                    <td><h:outputText value="Email:" /></td>  
+                    <td><h:inputSecret id="email" value="#{user.email}"  
+                            required="true" requiredMessage="Bitte geben Sie Ihre Email-Adresse an!" /></td>  
+                    <td><h:message for="email" style="color:red" /></td>  
+                </tr> 
+                <tr>  
+                    <td />  
+                    <td><h:commandButton value="Register" action="#{user.add}" /></td>  
+                </tr>  
+                <tr>  
+                    <td><h:outputLink value="home.xhtml">Home</h:outputLink></td>  
+                </tr>  
+            </table>  
+        </h:form>  
+    </f:view>  
+</h:body>  
+</html>  
