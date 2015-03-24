@@ -41,8 +41,11 @@ public class User {
      */
     public User() {
         try {
-            Context ctx = new InitialContext();
-            ds = (DataSource) ctx.lookup("java:comp/env/jdbc/database");
+            Context initCtx = new InitialContext();
+            Context envCtx = (Context) initCtx.lookup("java:comp/env");
+            //ds = (DataSource) initCtx.lookup("java:comp/env/jdbc/Börse");       // Möglicherweise nur bis /env
+            ds = (DataSource)
+            envCtx.lookup("jdbc/Börse");
         } catch (NamingException e) {
             e.printStackTrace();
         }
