@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context antiJARLocking="true" path="/jsf_Benutzerverwaltung">
-    <Resorce name="jdbc/database" auth="Container" type="javax.sql.DataSource"
-        username="root" password="password" driverCalssName="com.mysql.jdbc.Driver"
-        url="jdbc:mysql://localhost:3306"/>
+<Context>
+    <Resource name="jdbc/Börse" auth="Container" type="javax.sql.DataSource" 
+              username="Ghost" password="1234" driverClassName="com.mysql.jdbc.Driver" 
+              url="jdbc:mysql://localhost:3306/Börse"  maxActive="15" maxIdle="3"/>
 </Context>
