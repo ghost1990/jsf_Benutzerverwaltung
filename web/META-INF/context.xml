@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context antiJARLocking="true" path="/jsf_Benutzerverwaltung">
+<Context antiJARLocking="true" path="/jsf_Benutzerverwaltung">                  // Angabe des verwendeten MySQL-Servers mit Verbindungsinformationen
   <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" 
             maxActive="15" maxIdle="3" name="jdbc/Börse" password="1234" 
             type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/Börse" username="root"/>

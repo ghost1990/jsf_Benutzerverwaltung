@@ -11,14 +11,13 @@
         </locale-config>  
     </application>  
     <navigation-rule>  
-        <description>login user</description>  
+        <description>login user</description>                                   //Navigationsregel für den Loginprozess
         <from-view-id>/login.xhtml</from-view-id>  
         <navigation-case>  
             <from-action>#{user.login}</from-action>  
             <from-outcome>output</from-outcome>  
             <to-view-id>/success.xhtml</to-view-id>  
         </navigation-case>  
-  
         <navigation-case>  
             <from-action>#{user.login}</from-action>  
             <from-outcome>invalid</from-outcome>  
@@ -27,7 +26,7 @@
     </navigation-rule>  
   
     <navigation-rule>  
-        <description>register new user</description>  
+        <description>register new user</description>                            //Navigationsregel für die Registrierung
         <from-view-id>/register.xhtml</from-view-id>  
         <navigation-case>  
             <from-action>#{user.add}</from-action>  

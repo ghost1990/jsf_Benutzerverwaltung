@@ -5,7 +5,7 @@
         <welcome-file>index.xhtml</welcome-file>
     </welcome-file-list>
     <resource-ref>
-        <description>Login Database</description>
+        <description>Login Database</description>                               
         <res-ref-name>jdbc/Börse</res-ref-name>
         <res-type>javax.sql.DataSource</res-type>
         <res-auth>Container</res-auth>

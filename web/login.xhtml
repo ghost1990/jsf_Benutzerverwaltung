@@ -15,23 +15,23 @@
                     <th>Login Page</th>  
                 </tr>  
                 <tr>  
-                    <td><h:outputText value="Enter Your Name : " /></td>  
+                    <td><h:outputText value="Name : " /></td>  
                     <td><h:inputText id="inputName" value="#{user.name}"  
-                            required="true" requiredMessage="Name field must not be empty" />  
+                            required="true" requiredMessage="Bitte geben Sie einen Namen an!" />  
                     </td>  
                     <td><h:message for="inputName" style="color:red" /></td>  
                 </tr>  
                 <tr>  
-                    <td><h:outputText value="Enter password :" /></td>  
+                    <td><h:outputText value="Passwort :" /></td>  
                     <td><h:inputSecret id="inputPassword" value="#{user.passwort}"  
-                            required="true"  
-                            requiredMessage="Password field must not be empty" /></td>  
+                            required="true" requiredMessage="Bitte geben Sie ein Passwort ein!" />
+                    </td>  
                     <td><h:message for="inputPassword" style="color:red" /></td>  
                 </tr>  
                 <tr>  
                     <td><h:commandButton value="Sign In" action="#{user.login}" /></td>  
-                    <td><h:outputText value="Not a User " />   
-                        <h:outputLink value="register.xhtml">Sign Up</h:outputLink>  
+                    <td><h:outputText value="Noch kein Mitglied: " />   
+                        <h:outputLink value="register.xhtml">Registrieren</h:outputLink>  
                     </td>  
                 </tr>  
             </table>  
