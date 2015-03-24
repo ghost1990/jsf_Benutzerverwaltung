@@ -41,9 +41,9 @@ public class User {
      */
     public User() {
         try {
-            Context initCtx = new InitialContext();
-            Context envCtx = (Context) initCtx.lookup("java:comp/env");
-            //ds = (DataSource) initCtx.lookup("java:comp/env/jdbc/Börse");       // Möglicherweise nur bis /env
+            Context initCtx = new InitialContext();                             // Suche nach Datenbank
+            Context envCtx = (Context) initCtx.lookup("java:comp/env");         //
+            //ds = (DataSource) initCtx.lookup("java:comp/env/jdbc/Börse");     //
             ds = (DataSource)
             envCtx.lookup("jdbc/Börse");
         } catch (NamingException e) {
@@ -124,7 +124,7 @@ public class User {
                 if (ds != null) {
                     con = ds.getConnection();
                     if (con != null) {
-                        String sql = "INSERT INTO User(Name, Passwort, Beruf, Arbeitgeber, Ort, Straße, E-Mail) VALUES(?,?,?,?,?,?,?)";
+                        String sql = "INSERT INTO User(Name, Passwort, Beruf, Arbeitgeber, Ort, Straße, Email) VALUES(?,?,?,?,?,?,?)";
                         ps = con.prepareStatement(sql);
                         ps.setString(1, name);
                         ps.setString(2, passwort);
@@ -170,6 +170,7 @@ public class User {
                         ps = con.prepareStatement(sql);
                         rs = ps.executeQuery();
                         rs.next();
+                        System.out.println("Result Set = " + rs);
                         dbName = rs.getString("name");
                         dbPasswort = rs.getString("passwort");
                     }
