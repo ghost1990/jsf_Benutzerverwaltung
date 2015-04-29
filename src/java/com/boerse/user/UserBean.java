@@ -34,7 +34,7 @@ public class UserBean {
     private String strasse;
     private String email;
     private String guthaben;
-    private String group;
+    private String gruppe;
     private String dbPasswort;
     private String dbName;
     DataSource ds;
@@ -47,8 +47,7 @@ public class UserBean {
             Context initCtx = new InitialContext();                             // Suche nach Datenbank
             Context envCtx = (Context) initCtx.lookup("java:comp/env");         //
             //ds = (DataSource) initCtx.lookup("java:comp/env/jdbc/Börse");     //
-            ds = (DataSource)
-            envCtx.lookup("jdbc/Boerse");
+            ds = (DataSource) envCtx.lookup("jdbc/Boerse");
         } catch (NamingException e) {
             e.printStackTrace();
         }
@@ -117,7 +116,7 @@ public class UserBean {
     public void setEmail(String email) {
         this.email = email;
     }
-   
+
     public String getGuthaben() {
         return guthaben;
     }
@@ -126,12 +125,12 @@ public class UserBean {
         this.guthaben = guthaben;
     }
 
-    public String getGroup() {
-        return group;
+    public String getGruppe() {
+        return gruppe;
     }
 
-    public void setGroup(String group) {
-        this.group = group;
+    public void setGruppe(String gruppe) {
+        this.gruppe = gruppe;
     }
 
     public String add() {
@@ -143,7 +142,7 @@ public class UserBean {
                 if (ds != null) {
                     con = ds.getConnection();
                     if (con != null) {
-                        String sql = "INSERT INTO User(Name, Passwort, Beruf, Arbeitgeber, Ort, Straße, Email, Guthaben, Group) VALUES(?,?,?,?,?,?,?,?,?)";
+                        String sql = "INSERT INTO User(Name, Passwort, Beruf, Arbeitgeber, Ort, Straße, Email, Guthaben) VALUES(?,?,?,?,?,?,?,?)";
                         ps = con.prepareStatement(sql);
                         ps.setString(1, name);
                         ps.setString(2, passwort);
@@ -153,7 +152,14 @@ public class UserBean {
                         ps.setString(6, strasse);
                         ps.setString(7, email);
                         ps.setString(8, guthaben);
-                        ps.setString(9, group);
+                        i = ps.executeUpdate();
+
+                        String sql2 = "INSERT INTO GroupTable(Groups, User_Name)";
+                        ps = null;
+                        ps = con.prepareStatement(sql2);
+                        ps.setString(1, gruppe);
+                        ps.setString(2, name);
+                        i=0;
                         i = ps.executeUpdate();
                         System.out.println("Daten erfolgreich hinzugefügt!");
                     }
