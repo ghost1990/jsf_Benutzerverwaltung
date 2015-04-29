@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -22,8 +23,8 @@ import javax.sql.DataSource;
  * @author Ghost
  */
 @ManagedBean(name = "user")
-@RequestScoped
-public class User {
+@SessionScoped
+public class UserBean {
 
     private String name;
     private String passwort;
@@ -32,6 +33,8 @@ public class User {
     private String ort;
     private String strasse;
     private String email;
+    private String guthaben;
+    private String group;
     private String dbPasswort;
     private String dbName;
     DataSource ds;
@@ -39,13 +42,13 @@ public class User {
     /**
      * Creates a new instance of User
      */
-    public User() {
+    public UserBean() {
         try {
             Context initCtx = new InitialContext();                             // Suche nach Datenbank
             Context envCtx = (Context) initCtx.lookup("java:comp/env");         //
             //ds = (DataSource) initCtx.lookup("java:comp/env/jdbc/Börse");     //
             ds = (DataSource)
-            envCtx.lookup("jdbc/Börse");
+            envCtx.lookup("jdbc/Boerse");
         } catch (NamingException e) {
             e.printStackTrace();
         }
@@ -114,6 +117,22 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+   
+    public String getGuthaben() {
+        return guthaben;
+    }
+
+    public void setGuthaben(String guthaben) {
+        this.guthaben = guthaben;
+    }
+
+    public String getGroup() {
+        return group;
+    }
+
+    public void setGroup(String group) {
+        this.group = group;
+    }
 
     public String add() {
         int i = 0;
@@ -124,7 +143,7 @@ public class User {
                 if (ds != null) {
                     con = ds.getConnection();
                     if (con != null) {
-                        String sql = "INSERT INTO User(Name, Passwort, Beruf, Arbeitgeber, Ort, Straße, Email) VALUES(?,?,?,?,?,?,?)";
+                        String sql = "INSERT INTO User(Name, Passwort, Beruf, Arbeitgeber, Ort, Straße, Email, Guthaben, Group) VALUES(?,?,?,?,?,?,?,?,?)";
                         ps = con.prepareStatement(sql);
                         ps.setString(1, name);
                         ps.setString(2, passwort);
@@ -133,6 +152,8 @@ public class User {
                         ps.setString(5, ort);
                         ps.setString(6, strasse);
                         ps.setString(7, email);
+                        ps.setString(8, guthaben);
+                        ps.setString(9, group);
                         i = ps.executeUpdate();
                         System.out.println("Daten erfolgreich hinzugefügt!");
                     }

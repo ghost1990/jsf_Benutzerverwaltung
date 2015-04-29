@@ -4,9 +4,32 @@
     <welcome-file-list>
         <welcome-file>index.xhtml</welcome-file>
     </welcome-file-list>
+    <security-constraint>
+        <display-name>Test Constraint</display-name>
+        <web-resource-collection>
+            <web-resource-name>test</web-resource-name>
+            <description/>
+            <url-pattern>/test/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description>USER</description>
+        </auth-constraint>
+    </security-constraint>
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>Benutzerverwaltung</realm-name>
+    </login-config>
+    <security-role>
+        <description/>
+        <role-name>USER</role-name>
+    </security-role>
+    <security-role>
+        <description/>
+        <role-name>ADMIN</role-name>
+    </security-role>
     <resource-ref>
-        <description>Login Database</description>                               
-        <res-ref-name>jdbc/Börse</res-ref-name>
+        <description>Login Database</description>
+        <res-ref-name>jdbc/Boerse</res-ref-name>
         <res-type>javax.sql.DataSource</res-type>
         <res-auth>Container</res-auth>
     </resource-ref>
@@ -24,7 +47,7 @@
     </servlet-mapping>
     <context-param>
         <description>State saving method: 'client' or 'server' (=default). See JSF Specification 2.5.2</description>
-        <param-name>javax.faces.STATE_SAVING_METHOD</param-name>                // Gibt an wo Applikationsdaten gespeichert werden sollen
+        <param-name>javax.faces.STATE_SAVING_METHOD</param-name>                
         <param-value>server</param-value>
     </context-param>
     <context-param>

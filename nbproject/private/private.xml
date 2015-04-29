@@ -2,18 +2,13 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group name="WebShop">
+            <file>file:/Users/Ghost/NetBeansProjects/jsf_Benutzerverwaltung/src/java/com/boerse/user/UserBean.java</file>
+            <file>file:/Users/Ghost/NetBeansProjects/jsf_Benutzerverwaltung/web/index.xhtml</file>
+        </group>
         <group>
             <file>file:/Users/Ghost/NetBeansProjects/jsf_Benutzerverwaltung/web/WEB-INF/web.xml</file>
-            <file>file:/Users/Ghost/NetBeansProjects/jsf_Benutzerverwaltung/web/WEB-INF/faces-config.xml</file>
-            <file>file:/Users/Ghost/NetBeansProjects/jsf_Benutzerverwaltung/web/register.xhtml</file>
-            <file>file:/Users/Ghost/NetBeansProjects/jsf_Benutzerverwaltung/web/home.xhtml</file>
-            <file>file:/Users/Ghost/NetBeansProjects/jsf_Benutzerverwaltung/web/META-INF/context.xml</file>
-            <file>file:/Users/Ghost/NetBeansProjects/jsf_Benutzerverwaltung/src/java/com/boerse/user/User.java</file>
-            <file>file:/Users/Ghost/NetBeansProjects/jsf_Benutzerverwaltung/web/login.xhtml</file>
-            <file>file:/Users/Ghost/NetBeansProjects/jsf_Benutzerverwaltung/web/unsuccess.xhtml</file>
-            <file>file:/Users/Ghost/NetBeansProjects/jsf_Benutzerverwaltung/web/index.xhtml</file>
-            <file>file:/Users/Ghost/NetBeansProjects/jsf_Benutzerverwaltung/web/error.xhtml</file>
-            <file>file:/Users/Ghost/NetBeansProjects/jsf_Benutzerverwaltung/web/success.xhtml</file>
+            <file>file:/Users/Ghost/NetBeansProjects/jsf_Benutzerverwaltung/src/java/com/boerse/user/UserBean.java</file>
         </group>
     </open-files>
 </project-private>
