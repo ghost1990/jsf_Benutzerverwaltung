@@ -7,8 +7,9 @@
             <file>file:/Users/Ghost/NetBeansProjects/jsf_Benutzerverwaltung/web/index.xhtml</file>
         </group>
         <group>
-            <file>file:/Users/Ghost/NetBeansProjects/jsf_Benutzerverwaltung/web/WEB-INF/web.xml</file>
-            <file>file:/Users/Ghost/NetBeansProjects/jsf_Benutzerverwaltung/src/java/com/boerse/user/UserBean.java</file>
+            <file>file:/Users/Ghost/NetBeansProjects/Boerse_Client/web/register.xhtml</file>
+            <file>file:/Users/Ghost/NetBeansProjects/Boerse_Client/web/success.xhtml</file>
+            <file>file:/Users/Ghost/NetBeansProjects/Boerse_Client/src/java/com/boerse/user/UserBean.java</file>
         </group>
     </open-files>
 </project-private>

@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://tickerdienst.boerse.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://tickerdienst.boerse.com/">
+
+<xs:element name="addAktien" type="tns:addAktien"/>
+
+<xs:element name="addAktienResponse" type="tns:addAktienResponse"/>
+
+<xs:element name="deleteAll" type="tns:deleteAll"/>
+
+<xs:element name="deleteAllResponse" type="tns:deleteAllResponse"/>
+
+<xs:element name="getAktienkurspername" type="tns:getAktienkurspername"/>
+
+<xs:element name="getAktienkurspernameResponse" type="tns:getAktienkurspernameResponse"/>
+
+<xs:element name="getallAktienkurse" type="tns:getallAktienkurse"/>
+
+<xs:element name="getallAktienkurseResponse" type="tns:getallAktienkurseResponse"/>
+
+<xs:complexType name="deleteAll">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="deleteAllResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addAktien">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="kurs" type="xs:float"/>
+<xs:element name="currentTimestamp" type="tns:timestamp" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="timestamp">
+<xs:sequence>
+<xs:element name="nanos" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addAktienResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getallAktienkurse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getallAktienkurseResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAktienkurspername">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAktienkurspernameResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

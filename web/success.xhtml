@@ -1,21 +1,48 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"  
-    xmlns:h="http://java.sun.com/jsf/html"  
-    xmlns:f="http://java.sun.com/jsf/core">  
-  
-<h:head>  
-    <title>Success Page</title>  
-</h:head>  
-<h:body>  
-    <f:view>  
-        <p>Login erfolgreich</p>  
-        <p>Hi, #{user.name}</p>  
-        <h:form>  
-            <p>  
-                <h:commandLink value="logout" action="#{user.logout}" />  
-            </p>  
-        </h:form>  
-    </f:view>  
-</h:body>  
+      xmlns:h="http://java.sun.com/jsf/html"  
+      xmlns:f="http://java.sun.com/jsf/core">  
+
+    <h:head>  
+        <title>Success Page</title>  
+    </h:head>  
+    <h:body>  
+        <f:view>  
+            <h:form id="SuccessForm">
+                <table>
+                    <tr>
+                        <td><p>Login erfolgreich</p></td>  
+                    </tr>
+                    <tr>
+                        <td><p>Hallo, #{user.name}</p></td>
+                    </tr>
+                    <tr>
+                        <td><p>Aktuelles Guthaben: #{user.guthaben}</p></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputText value="Aktuelle Aktienkurse: " /></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputText value="#{user.getallAktienkurse()}"/></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputText value="Aktienkurs per Name abfragen: "/>
+                            <h:inputText id="inputAktie" value="#{user.eingabe}"  
+                                         required="true" requiredMessage="Bitte geben Sie einen Aktiennamen an!" />
+                            <h:commandButton value="Kurs Abrufen" action="#{user.kursAbrufen()}" />
+                            <h:outputText value="#{user.kurs}"/></td>
+                    </tr>
+                    <tr>
+                        <td><h:commandButton value="Auftrag Anlegen" action="#" /></td>
+                    </tr>
+                </table>
+            </h:form>
+            <h:form>  
+                <p>  
+                    <h:commandLink value="logout" action="#{user.logout}" />  
+                </p>  
+            </h:form>  
+        </f:view>  
+    </h:body>  
 </html>  

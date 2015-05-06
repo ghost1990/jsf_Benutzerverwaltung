@@ -37,6 +37,8 @@ public class UserBean {
     private String gruppe;
     private String dbPasswort;
     private String dbName;
+    private String eingabe;
+    private Float kurs;
     DataSource ds;
 
     /**
@@ -132,6 +134,21 @@ public class UserBean {
     public void setGruppe(String gruppe) {
         this.gruppe = gruppe;
     }
+    
+    public String getEingabe() {
+        return eingabe;
+    }
+
+    public void setEingabe(String eingabe) {
+        this.eingabe = eingabe;
+    }
+    public Float getKurs() {
+        return kurs;
+    }
+
+    public void setKurs(Float kurs) {
+        this.kurs = kurs;
+    }
 
     public String add() {
         int i = 0;
@@ -223,6 +240,29 @@ public class UserBean {
         FacesContext.getCurrentInstance()
                 .getApplication().getNavigationHandler()
                 .handleNavigation(FacesContext.getCurrentInstance(), null, "/login.xhtml");
+    }
+    
+    public Float kursAbrufen(){
+        kurs = getAktienkurspername(eingabe);
+        return kurs;
+    }
+
+    public static String getallAktienkurse() {
+        com.boerse.user.TickerdienstWS_Service service = new com.boerse.user.TickerdienstWS_Service();
+        com.boerse.user.TickerdienstWS port = service.getTickerdienstWSPort();
+        return port.getallAktienkurse();
+    }
+
+    private static String deleteAll() {
+        com.boerse.user.TickerdienstWS_Service service = new com.boerse.user.TickerdienstWS_Service();
+        com.boerse.user.TickerdienstWS port = service.getTickerdienstWSPort();
+        return port.deleteAll();
+    }
+
+    private static float getAktienkurspername(java.lang.String name) {
+        com.boerse.user.TickerdienstWS_Service service = new com.boerse.user.TickerdienstWS_Service();
+        com.boerse.user.TickerdienstWS port = service.getTickerdienstWSPort();
+        return port.getAktienkurspername(name);
     }
 
 }
